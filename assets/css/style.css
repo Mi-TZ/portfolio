@@ -58,6 +58,7 @@
   }
 }
 
+
 /* Variables Dark Theme */
 body.dark-theme {
   --first-color-second: hsl(var(--hue-color), 30%, 8%);
@@ -626,6 +627,90 @@ button {
   outline: none;
 }
 
+.grid {
+  display: grid;
+  width: 100%;
+  grid-gap: 4rem; /* Decreased grid-gap further for smaller screens */
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* Further decreased minmax value for smaller cards */
+  align-items: start;
+}
+
+@media (max-width: 60em) {
+  .grid {
+    grid-gap: 1rem; /* Adjusted grid-gap for even smaller screens */
+  }
+}
+
+.grid__item {
+  background-color: #fff;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); /* Further decreased box-shadow values for smaller cards */
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.grid__item:hover {
+  transform: translateY(-0.2%); /* Further reduced translateY for a smaller hover effect */
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); /* Further decreased box-shadow values for the hover effect */
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+  height: 12rem; /* Further reduced height for smaller cards */
+  object-fit: cover;
+}
+
+.card__content {
+  padding: 1rem; /* Further reduced padding for the card content */
+}
+
+.card__header {
+  font-size: 1.2rem; /* Further reduced font size for the header */
+  font-weight: 1000;
+  color: #0d0d0d;
+  margin-bottom: 0.5rem; /* Further reduced margin for the header */
+}
+
+.card__text {
+  font-size: 0.9rem; /* Further reduced font size for the text */
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+  color: #3d3d3d;
+  margin-bottom: 1rem; /* Further reduced margin for the text */
+}
+
+.card__btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem; /* Further reduced padding for the button */
+  font-size: 1.2rem; /* Further reduced font size for the button */
+  text-align: center;
+  color: #3363ff;
+  background-color: #e6ecff;
+  border: none;
+  border-radius: 0.2rem; /* Further reduced border-radius for the button */
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.card__btn span {
+  margin-left: 0.6rem; /* Further adjusted margin for the span */
+  transition: 0.2s;
+}
+
+.card__btn:hover,
+.card__btn:active {
+  background-color: #dce4ff;
+}
+
+.card__btn:hover span,
+.card__btn:active span {
+  margin-left: 0.8rem; /* Further adjusted margin for the span on hover/active */
+}
+
+
 /* CONTACT ME  */
 .contact_container {
   row-gap: 3rem;
@@ -995,6 +1080,8 @@ button {
     margin-top: 4.5rem;
   }
 }
+
+
 
 /* For large devices */
 @media screen and (min-width: 1024px) {
