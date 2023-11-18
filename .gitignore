@@ -86,3 +86,20 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  grid-gap: 5rem; /* Decreased grid-gap further for larger screens */
+  align-items: start;
+
+}
+
+@media (max-width: 60em) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* One column for smaller screens */
+    grid-gap: 1rem; /* Adjusted grid-gap for even smaller screens */
+  }
+}

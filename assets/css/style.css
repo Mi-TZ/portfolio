@@ -303,7 +303,7 @@ button {
 }
 
 .home_blob-img {
-  width: 170px;
+  width: 200px;
 }
 
 .home_data {
@@ -629,9 +629,10 @@ button {
 
 .grid {
   display: grid;
-  width: 100%;
+  /* width: 100%; */
+
   grid-gap: 4rem; /* Decreased grid-gap further for smaller screens */
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* Further decreased minmax value for smaller cards */
+
   align-items: start;
 }
 
@@ -641,9 +642,37 @@ button {
   }
 }
 
+._grid {
+  display: grid;
+  /* width: 100%; */
+  grid-template-columns: repeat(3, 1fr); /* Two columns with equal width */
+padding-left: 60px;
+padding-right: 60px;
+
+  grid-gap: 4rem; /* Decreased grid-gap further for smaller screens */
+
+  align-items: start;
+} 
+
+@media (max-width: 60em) {
+  ._grid {
+    grid-template-columns: repeat(1, 1fr); /* Two columns with equal width */
+
+    grid-gap: 1rem; /* Adjusted grid-gap for even smaller screens */
+  }
+}
+
 .grid__item {
-  background-color: #fff;
-  border-radius: 0.3rem;
+  width: 100%;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem 0.25rem;
+  outline: none;
+
+  border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); /* Further decreased box-shadow values for smaller cards */
   cursor: pointer;
@@ -660,6 +689,7 @@ button {
   width: 100%;
   height: 12rem; /* Further reduced height for smaller cards */
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .card__content {
@@ -669,7 +699,6 @@ button {
 .card__header {
   font-size: 1.2rem; /* Further reduced font size for the header */
   font-weight: 1000;
-  color: #0d0d0d;
   margin-bottom: 0.5rem; /* Further reduced margin for the header */
 }
 
@@ -677,7 +706,6 @@ button {
   font-size: 0.9rem; /* Further reduced font size for the text */
   letter-spacing: 0.1rem;
   line-height: 1.3;
-  color: #3d3d3d;
   margin-bottom: 1rem; /* Further reduced margin for the text */
 }
 
@@ -688,9 +716,9 @@ button {
   font-size: 1.2rem; /* Further reduced font size for the button */
   text-align: center;
   color: #3363ff;
-  background-color: #e6ecff;
-  border: none;
-  border-radius: 0.2rem; /* Further reduced border-radius for the button */
+  background-color: #00000000;
+  border: var(--first-color) 2px solid;
+  border-radius: 1rem; /* Further reduced border-radius for the button */
   transition: 0.2s;
   cursor: pointer;
 }
